@@ -4,6 +4,12 @@ An exploratory data analysis of Asia Cup cricket matches spanning nearly four de
 
 ---
 
+## 🎯 Project Objective
+
+The goal of this project is to analyze historical Asia Cup cricket data to identify trends in match frequency, scoring patterns, and batting performance across different eras and formats using exploratory data analysis techniques.
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -29,11 +35,19 @@ An exploratory data analysis of Asia Cup cricket matches spanning nearly four de
 
 ---
 
+## 📥 Data Source
+
+All datasets were sourced from [Kaggle — Asia Cup Cricket (1984 to 2022)](https://www.kaggle.com/datasets/hasibalmuzdadid/asia-cup-cricket-1984-to-2022), compiled into structured CSV files covering match results, batting statistics, bowling statistics, and tournament outcomes.
+
+Data cleaning and preprocessing were performed using Pandas. Note that while the dataset covers tournaments up to 2022, the player-level statistical data (batting, bowling, wicketkeeping) extends through the 2018 tournament, which is reflected in the era-based analysis.
+
+---
+
 ## 📊 Analysis Overview
 
 ### Format Distribution
 ![Asia Cup Matches by Format](images/graph_01.png)
-ODI has dominated the Asia Cup with **206 matches** compared to **48 T20I matches**, reflecting the tournament's historical roots in the 50-over format.
+ODI has dominated the Asia Cup with **206 matches** compared to **48 T20I matches**, reflecting the tournament's historical roots in the 50-over format. T20I matches began appearing from 2016 onward as the format gained global popularity, and remain a smaller portion of the overall dataset.
 
 ---
 
@@ -45,13 +59,13 @@ Match counts grew significantly from the mid-2000s onward, with 2004, 2008, and 
 
 ### ODI Matches by Era
 ![ODI Matches by Era](images/graph_03.png)
-The analysis splits matches into three eras: **Early (1984–1995)**, **Middle (1996–2008)**, and **Modern (2009–2018)**. The Middle and Modern eras saw significantly more matches, with 78 and 76 respectively vs just 50 in the Early era.
+The analysis splits matches into three eras: **Early (1984–1995)**, **Middle (1996–2008)**, and **Modern (2009–2018)**. Era definitions were chosen based on major structural and gameplay shifts, including expansion of participating teams, changes in tournament frequency, and the introduction of modern aggressive batting approaches. The Middle and Modern eras saw significantly more matches, with 78 and 76 respectively vs just 50 in the Early era.
 
 ---
 
 ### Performance Distributions by Era (KDE)
 ![KDE Performance by Era](images/graph_04.png)
-Kernel density plots reveal how runs scored, strike rate, and boundary percentage have shifted across eras. The Modern Era shows a tighter, higher distribution — indicating more consistent and aggressive batting.
+Kernel density plots reveal how runs scored, strike rate, and boundary percentage have shifted across eras. The Modern Era shows a tighter, higher distribution — suggesting increased scoring consistency and higher run rates in the modern era.
 
 ---
 
@@ -75,8 +89,8 @@ Box plots confirm the trend: the **Modern Era** has the highest median runs (246
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-   cd YOUR_REPO_NAME
+   git clone https://github.com/SarimKhalil/asia-cup-analysis.git
+   cd asia-cup-analysis
    ```
 
 2. Install dependencies:
@@ -93,8 +107,18 @@ Box plots confirm the trend: the **Modern Era** has the highest median runs (246
 
 ## 📌 Key Findings
 
-- ODI remains the dominant Asia Cup format with 4x more matches than T20I
+- ODI, historically, remains the dominant Asia Cup format with 4x more matches than T20I
+- T20I matches were introduced to the Asia Cup from 2016 onward and remain a smaller portion of the tournament
 - Match frequency grew significantly post-2000 due to tournament expansion
 - The Modern Era (2009–2018) shows higher, more consistent scoring with greater boundary hitting
 - The Middle Era was the most volatile period for batting performance
 - Sixes have increased steadily across all eras, reflecting the evolution of aggressive batting
+
+---
+
+## ⚠️ Limitations
+
+- Player-level statistical analysis is limited to ODI data up to 2018; the 2022 tournament is reflected in match-level data only
+- Contextual factors such as pitch conditions, rule changes, and team strength were not included
+- Some tournaments had fewer matches, which may affect era comparisons
+- T20I data is limited due to its recent introduction in the Asia Cup
